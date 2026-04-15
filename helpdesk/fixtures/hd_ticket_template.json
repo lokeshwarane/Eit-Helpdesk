@@ -1,0 +1,34 @@
+[
+ {
+  "about": null,
+  "description_template": null,
+  "docstatus": 0,
+  "doctype": "HD Ticket Template",
+  "fields": [
+   {
+    "fieldname": "custom_project",
+    "hide_from_customer": 0,
+    "placeholder": null,
+    "required": 1,
+    "url_method": "helpdesk.api.ticket.get_user_projects"
+   },
+   {
+    "fieldname": "ticket_type",
+    "hide_from_customer": 0,
+    "placeholder": null,
+    "required": 1,
+    "url_method": null
+   },
+   {
+    "fieldname": "priority",
+    "hide_from_customer": 0,
+    "placeholder": null,
+    "required": 1,
+    "url_method": null
+   }
+  ],
+  "modified": "2026-04-14 15:33:10.355472",
+  "name": "Default",
+  "template_name": "Default"
+ }
+]

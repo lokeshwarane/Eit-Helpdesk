@@ -63,6 +63,9 @@ doc_events = {
     "Contact": {
         "before_insert": "helpdesk.overrides.contact.before_insert",
     },
+    "HD Ticket": {
+        "after_insert": "helpdesk.api.create_issue.create_issue_from_ticket",
+    },
     "Assignment Rule": {
         "on_trash": "helpdesk.extends.assignment_rule.on_assignment_rule_trash",
         "validate": "helpdesk.extends.assignment_rule.on_assignment_rule_validate",
@@ -107,5 +110,8 @@ fixtures = [
     {"doctype": "HD Ticket Template"},
     {"doctype": "Custom Field",
     "filters": {"module": ["=", "Helpdesk"]}
+    },
+    {
+        "doctype": "Issue Type"
     }
 ]

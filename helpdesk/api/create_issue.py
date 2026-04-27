@@ -2,8 +2,8 @@ import frappe
 import requests
 
 LIVE_SITE_URL = "https://erp.ethicalintelligent.com"   # 🔁 Replace with your live site URL
-API_KEY = "1bb19f90d97e69c"                         # 🔁 From step 1
-API_SECRET = "2b66f346c3b277d"                   # 🔁 From step 1
+API_KEY = "9971147aee92d67"                         # 🔁 From step 1
+API_SECRET = "c8a2eea16b864b0"                   # 🔁 From step 1
 
 def create_issue_from_ticket(doc, method=None):
     # Prevent duplicate
@@ -15,11 +15,16 @@ def create_issue_from_ticket(doc, method=None):
         "Content-Type": "application/json",
     }
 
+    raiser = doc.raised_by or getattr(doc, "email", None)
+
+    description_with_credit = f"<b>Raised by:</b> {raiser}<br><br>" + (doc.description or getattr(doc, "content", ""))
+
     payload = {
         "doctype": "Issue",
         "subject": doc.subject,
-        "description": doc.description or getattr(doc, "content", ""),
-        "raised_by": doc.raised_by or getattr(doc, "email", None),
+        "description": description_with_credit,  # 👈
+        "raised_by": raiser,
+        "owner": raiser,                          # 👈 attempt to set owner
         "status": "Open",
         "priority": getattr(doc, "priority", "Medium"),
         "issue_type": getattr(doc, "ticket_type", None),

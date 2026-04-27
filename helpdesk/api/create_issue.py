@@ -3,7 +3,7 @@ import requests
 
 LIVE_SITE_URL = "https://erp.ethicalintelligent.com"   # 🔁 Replace with your live site URL
 API_KEY = "1bb19f90d97e69c"                         # 🔁 From step 1
-API_SECRET = "1aee9ca5a74a49b"                   # 🔁 From step 1
+API_SECRET = "2b66f346c3b277d"                   # 🔁 From step 1
 
 def create_issue_from_ticket(doc, method=None):
     # Prevent duplicate

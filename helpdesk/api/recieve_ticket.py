@@ -21,7 +21,7 @@ def recieve_helpdesk_ticket(doc, method=None):
 
     try:
         response = requests.post(
-            f"{LIVE_SITE_URL}/api/method/helpdesk.api.create_issue.create_issue_from_ticket",
+            f"{LIVE_SITE_URL}/api/method/eit.api.create_issue.create_issue_from_ticket",
             json=payload,
             # 👆 No Authorization header at all
             timeout=10

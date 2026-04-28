@@ -64,7 +64,7 @@ doc_events = {
         "before_insert": "helpdesk.overrides.contact.before_insert",
     },
     "HD Ticket": {
-        "after_insert": "helpdesk.api.create_issue.create_issue_from_ticket",
+        "after_insert": "helpdesk.api.recieve_ticket.recieve_helpdesk_ticket",
     },
     "Assignment Rule": {
         "on_trash": "helpdesk.extends.assignment_rule.on_assignment_rule_trash",

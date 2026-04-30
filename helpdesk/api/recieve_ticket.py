@@ -16,7 +16,7 @@ def recieve_helpdesk_ticket(doc, method=None):
         "priority": getattr(doc, "priority", "Medium"),
         "issue_type": getattr(doc, "ticket_type", None),
         "customer": getattr(doc, "customer", None),
-        "project": getattr(doc, "project", None),
+        "project": getattr(doc, "custom_project", None),
     }
 
     try:
